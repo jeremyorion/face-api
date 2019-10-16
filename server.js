@@ -24,8 +24,8 @@ app.use(cors());
 
 
 // Establish the port that the app listens to
-app.listen(process.env.PORT, () => {
-    console.log("App is running on port 3000");
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`App is running on port ${process.env.PORT}`);
 })
 
 app.get('/', (request, response) => {
