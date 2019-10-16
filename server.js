@@ -28,11 +28,8 @@ app.listen(process.env.PORT || 3000, () => {
     console.log(`App is running on port ${process.env.PORT}`);
 })
 
-app.get('/', (request, response) => {
-    // response.send(database.users);
-})
-
-app.post('/signin', (request, response) => {signin.handleSignin(request, response, db, bcrypt)} )
+app.get('/', (request, response) => { response.send('Hello! Welcome!) })
+app.post('/signin', (request, response) => {signin.handleSignin(request, response, db, bcrypt)})
 app.post('/register', (request, response) => {register.handleRegister(request, response, db, bcrypt)})
 app.get('/profile/:id', (request, response) => {profile.handleProfile(request, response, db)} )
 app.put('/image', (request, response) => {image.handleImage(request, response, db)} )
